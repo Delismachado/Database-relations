@@ -36,12 +36,12 @@ class CreateOrderService {
     }
 
     const productsIds = products.map(product => {
-      return { id: product.id};
+      return { id: product.id };
     });
 
     const productsData = await this.productsRepository.findAllById(productsIds);
 
-    const productsFInal = productsData.map(productData => {
+    const productsFinal = productsData.map(productData => {
       const productFinal = products.find(
         productFind => productFind.id === productData.id,
       );
@@ -55,7 +55,7 @@ class CreateOrderService {
 
     const order = await this.ordersRepository.create({
       customer,
-      products: productsFInal,
+      products: productsFinal,
     });
 
     await this.productsRepository.updateQuantity(products);

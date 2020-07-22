@@ -39,7 +39,7 @@ export default class CreateOrdersProducts1595332990484 implements MigrationInter
               default:'now()',
             },
             {
-              name: 'update_at',
+              name: 'updated_at',
               type: 'timestamp',
               default:'now()',
             },

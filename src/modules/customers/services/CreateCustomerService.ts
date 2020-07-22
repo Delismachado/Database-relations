@@ -14,6 +14,7 @@ interface IRequest {
 class CreateCustomerService {
   constructor(
     @inject('CustomersRepository')
+    // eslint-disable-next-line prettier/prettier
     private customersRepository: ICustomersRepository) {}
 
   public async execute({ name, email }: IRequest): Promise<Customer> {

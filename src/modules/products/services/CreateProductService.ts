@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { inject, injectable } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
@@ -15,7 +16,7 @@ interface IRequest {
 class CreateProductService {
   constructor(
     @inject('ProductsRepository')
-    // eslint-disable-next-line prettier/prettier
+
     private productsRepository:IProductsRepository) {}
 
   public async execute({ name, price, quantity }: IRequest): Promise<Product> {
